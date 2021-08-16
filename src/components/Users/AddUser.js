@@ -47,21 +47,14 @@ const AddUser = (props) => {
     
   return (
     <Wrapper>
-      {error && <ErrorModel onConfirm={errorHandler} title={error.title} message={error.message}/>}
+      {error && 
+      (<ErrorModel onConfirm={errorHandler} title={error.title} message={error.message}/>)}
       <Card className={classes.input}>
         <form onSubmit={addUserHandler}>
           <label htmlFor="username">Username</label>
-          <input 
-            type="text" 
-            id="username" 
-            ref={nameInputRef}
-             />
+          <input  type="text" id="username"  ref={nameInputRef}/>
           <label htmlFor="age">Age (Years)</label>
-          <input 
-            type="number" 
-            id="age" 
-            ref={ageInputRef}
-            />
+          <input type="number" id="age" ref={ageInputRef}/>
           <Button type="submit">Add User</Button>
         </form> 
       </Card>
